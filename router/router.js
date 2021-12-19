@@ -10,4 +10,6 @@ router.get('/', productImgController.getProductImages);
 
 router.post('/', storage, productImgController.postProductImage);
 
+router.get('/products',productImgController.getProducts);
+
 module.exports = router;
