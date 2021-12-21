@@ -1,5 +1,6 @@
 const ProductImage = require('../model/productImage');
 const Product =require('../model/product');
+const product = require('../model/product');
 
 exports.getProductImages = async (req, res) => {
   const prodImages = await ProductImage.find();
@@ -9,6 +10,13 @@ exports.getProductImages = async (req, res) => {
 exports.getProducts=async(req,res)=>{
   const prod=await Product.find();
   res.status(200).json(prod);
+
+}
+
+exports.addProduct=async(req,res)=>{
+
+
+ // const product= new Product({"23","Atomic","URL"});
 
 }
 
