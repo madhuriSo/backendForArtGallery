@@ -14,9 +14,13 @@ exports.getProducts=async(req,res)=>{
 }
 
 exports.addProduct=async(req,res)=>{
-
-
- // const product= new Product({"23","Atomic","URL"});
+  const {name}=req.body;
+  const {price}=req.body;
+  const{description}=req.body;
+  const url="http://localhost:3000/images/"+name+".jpg";
+  const product=new Product({name,price,description,url});
+  const createProduct=await product.save();
+  res.status(201).json("Product created successfully.")
 
 }
 
@@ -30,6 +34,8 @@ exports.postProductImage = async (req, res) => {
      imagePath,
   });
   const createdImage = await productImage.save();
+  console.log("postProductImage"+createdImage);
+
   res.status(201).json({
     productImage: {
       ...createdImage._doc,

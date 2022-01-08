@@ -26,6 +26,6 @@ app.use(cors());
 
 app.use('/images', express.static(path.join('images')));
 
-app.use('/api/profiles', routes);
+app.use('/api', routes);
 
 /** http://localhost:3000/api/profiles */

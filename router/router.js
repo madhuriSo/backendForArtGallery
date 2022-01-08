@@ -11,6 +11,6 @@ router.get('/', productImgController.getProductImages);
 router.post('/', storage, productImgController.postProductImage);
 
 router.get('/products',productImgController.getProducts);
-router.post('/product',productImgController.addProduct);
+router.post('/products',storage,productImgController.addProduct);
 
 module.exports = router;
